@@ -1,0 +1,58 @@
+body {
+    background-color: $background;
+    background: url('../../images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.header {
+    text-align: center;
+    padding: $spacing-xl 0;
+}
+
+.team {
+    position: fixed;
+    top: 0;
+}
+
+.players {
+    margin-top: $spacing-sm;
+}
+
+.left {
+    text-align: right;
+    padding-right: $spacing-xl;
+    position: relative;
+    .team {
+        right: -15%;
+    }
+}
+
+.right {
+    text-align: left;
+    padding-left: $spacing-xl;
+    position: relative;
+    .team {
+        left: -15%;
+    }
+}
+
+.divider {
+    height: 1px;
+    width: 3rem;
+    background-color: $gray;
+    display: inline-block;
+    margin-bottom: $spacing-sm;
+}
+
+.photo {
+    border-radius: 50%;
+    border: solid 2px $white;
+    height: 100px;
+    width: 100px;
+    margin-bottom: $spacing-lg;
+    display: inline-block;
+}
+
+.card {
+    margin-bottom: $spacing-sm;
+}

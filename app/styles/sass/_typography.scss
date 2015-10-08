@@ -1,0 +1,43 @@
+//
+//Type variables
+$typeface: 'Roboto';
+$base-size: 15px;
+$weight-normal: 400;
+//
+$title-size: 1rem;
+$title-color: $gray;
+$title-weight: $weight-normal;
+//
+$number-size: 2rem;
+$number-color: $white;
+$number-weight: $weight-normal;
+//
+//Type declarations
+//
+html, html a {
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+html,
+body {
+    font-size: $base-size;
+    font-family: $typeface;
+}
+
+.title {
+    @include font($title-size, $title-color, $title-weight);
+    text-transform: lowercase;
+}
+
+.number {
+    @include font($number-size, $number-color, $number-weight);
+}
+
+.winner {
+    color: $green;
+}
+
+.draw {
+    color: $yellow;
+}
