@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900);
 //
 //Type variables
 $typeface: 'Roboto';
@@ -14,9 +15,10 @@ $number-weight: $weight-normal;
 //
 //Type declarations
 //
-html, html a {
+html,
+html a {
     -webkit-font-smoothing: antialiased;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
 
 html,
@@ -30,7 +32,7 @@ body {
     text-transform: lowercase;
 }
 
-.number {
+.number, .name {
     @include font($number-size, $number-color, $number-weight);
 }
 

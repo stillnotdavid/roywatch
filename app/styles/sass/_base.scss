@@ -1,7 +1,8 @@
+$mobile: 761px;
 body {
-    background-color: $background;
-    background: url('../../images/background.jpg') no-repeat center center fixed;
+    background: url('../images/background.jpg') no-repeat center center fixed;
     background-size: cover;
+    background-color: $background;
 }
 
 .header {
@@ -10,8 +11,12 @@ body {
 }
 
 .team {
+    display: none;
     position: fixed;
     top: 0;
+    @media (min-width: $mobile) {
+        display: block;
+    }
 }
 
 .players {
@@ -20,21 +25,33 @@ body {
 
 .left {
     text-align: right;
-    padding-right: $spacing-xl;
+    padding-right: $spacing-md;
     position: relative;
+    @media (min-width: $mobile) {
+        padding-right: $spacing-xl;
+    }
     .team {
         right: -15%;
+        @media (min-width: $mobile) {
+            right: -15%;
+        }
     }
 }
 
 .right {
     text-align: left;
-    padding-left: $spacing-xl;
+    padding-left: $spacing-md;
     position: relative;
+    @media (min-width: $mobile) {
+        padding-left: $spacing-xl;
+    }
     .team {
         left: -15%;
+        @media (min-width: $mobile) {
+            right: -15%;
+        }
     }
-}
+} 
 
 .divider {
     height: 1px;
