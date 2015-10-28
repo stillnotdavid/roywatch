@@ -73,3 +73,12 @@ body {
 .card {
     margin-bottom: $spacing-sm;
 }
+
+.team-image {
+  max-width: 40%;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=05)";
+  filter: alpha(opacity=05);
+  -moz-opacity: 0.05;
+  -khtml-opacity: 0.05;
+  opacity: 0.05;
+}
