@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" ng-app="roywatch">
 
 <head>
     <meta charset="utf-8">
@@ -25,12 +25,10 @@
 
 </head>
 
-<body>
+<body ng-controller="indexController as c">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-
     <section class="header">
         <div class="container">
             <div class="logo">
@@ -43,16 +41,13 @@
             <div class="row players">
                 <div class="col-xs-6 left">
                     <div class="team">
-                        <img src="images/sabres.png">
+                        <img src="images/oilers.png">
                     </div>
                     <div class="photo">
-                        <img class="img-responsive" src="images/jack.png">
+                        <img class="img-responsive img-circle" src="images/mcdavid.png">
                     </div>
                     <div class="card animated bounceInLeft">
-                        <div class="title">
-                            1999 votes
-                        </div>
-                        <div class="name winner">
+                        <div class="name">
                             Connor McDavid
                         </div>
                     </div>
@@ -63,12 +58,9 @@
                         <img src="images/sabres.png">
                     </div>
                     <div class="photo">
-                        <img class="img-responsive" src="images/jack.png">
+                        <img class="img-responsive img-circle" src="images/eichel.png">
                     </div>
                     <div class="card animated bounceInRight">
-                        <div class="title">
-                            4847 votes
-                        </div>
                         <div class="name">
                             Jack Eichel
                         </div>
@@ -77,72 +69,24 @@
                 </div>
             </div>
 
-            <div class="stats">
+            <div class="stats" ng-cloak>
                 <div class="col-xs-6 left">
-                    <div class="card animated bounceInLeft">
+                    <div class="card animated bounceInLeft" ng-repeat="(key, stat) in c.stats.mcdavid">
                         <div class="title">
-                            games played
+                            {{stat.display}}
                         </div>
-                        <div class="number draw">
-                            87
-                        </div>
-                    </div>
-                    <div class="card animated bounceInLeft">
-                        <div class="title">
-                            games played
-                        </div>
-                        <div class="number">
-                            87
-                        </div>
-                    </div>
-                    <div class="card animated bounceInLeft">
-                        <div class="title">
-                            title
-                        </div>
-                        <div class="number">
-                            600
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="title">
-                            title
-                        </div>
-                        <div class="number">
-                            300
+                        <div class="number" ng-class="stat.stat > c.stats.eichel[key].stat ? 'draw' : ''">
+                            {{stat.stat}}
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-6 right">
-                    <div class="card">
+                    <div class="card animated bounceInLeft" ng-repeat="(key, stat) in c.stats.eichel">
                         <div class="title">
-                            games played
+                            {{stat.display}}
                         </div>
-                        <div class="number draw">
-                            87
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="title">
-                            games played
-                        </div>
-                        <div class="number">
-                            87
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="title">
-                            title
-                        </div>
-                        <div class="number">
-                            300
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="title">
-                            title
-                        </div>
-                        <div class="number">
-                            2000
+                        <div class="number" ng-class="stat.stat > c.stats.mcdavid[key].stat ? 'draw' : ''">
+                            {{stat.stat}}
                         </div>
                     </div>
                 </div>
@@ -154,6 +98,7 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -176,6 +121,7 @@
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
+    <script src="scripts/indexController.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
