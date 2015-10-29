@@ -1,6 +1,15 @@
-$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 // bower:scss
-@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// Core variables and mixins
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+// Reset and dependencies
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
+// Core CSS
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/grid";
+// Utility classes
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
 // endbower
 @import "sass/_mixins.scss";
 @import "sass/_spacing.scss";

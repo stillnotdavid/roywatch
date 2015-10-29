@@ -9,6 +9,7 @@ $title-size: 1rem;
 $title-color: $gray;
 $title-weight: $weight-normal;
 //
+$number-size-xs: 1.75rem;
 $number-size: 2rem;
 $number-color: $white;
 $number-weight: $weight-normal;
@@ -32,8 +33,18 @@ body {
     text-transform: lowercase;
 }
 
-.number, .name {
-    @include font($number-size, $number-color, $number-weight);
+.number,
+.name {
+    @include font($number-size-xs, $number-color, $number-weight);
+    @media (min-width: $screen-sm-min) {
+        font-size: $number-size;
+    }
+}
+
+.first-name {
+    @media (min-width: $screen-sm-min) {
+        display: inline;
+    }
 }
 
 .winner {

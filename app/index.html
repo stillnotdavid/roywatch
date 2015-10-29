@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>roywatch</title>
+    <title>Roywatch</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,6 +29,12 @@
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <section class="loader">
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+        </div>
+    </section>
     <section class="header">
         <div class="container">
             <div class="logo">
@@ -40,29 +46,31 @@
         <div class="container">
             <div class="row players">
                 <div class="col-xs-6 left">
-                    <div class="team">
+                    <div class="team animated fadeInLeft">
                         <img src="images/oilers.png">
                     </div>
-                    <div class="photo">
+                    <div class="photo animated fadeInUp">
                         <img class="img-responsive img-circle" src="images/mcdavid.png">
                     </div>
                     <div class="card animated bounceInLeft">
+                        <div class="title">Edmonton Oilers</div>
                         <div class="name">
-                            Connor McDavid
+                            <div class="first-name">Connor</div> McDavid
                         </div>
                     </div>
                     <div class="divider"></div>
                 </div>
                 <div class="col-xs-6 right">
-                    <div class="team">
+                    <div class="team animated fadeInRight">
                         <img src="images/sabres.png">
                     </div>
-                    <div class="photo">
+                    <div class="photo animated fadeInUp">
                         <img class="img-responsive img-circle" src="images/eichel.png">
                     </div>
                     <div class="card animated bounceInRight">
+                        <div class="title">Buffalo Sabres</div>
                         <div class="name">
-                            Jack Eichel
+                            <div class="first-name">Jack</div> Eichel
                         </div>
                     </div>
                     <div class="divider"></div>
@@ -75,17 +83,17 @@
                         <div class="title">
                             {{stat.display}}
                         </div>
-                        <div class="number" ng-class="stat.stat > c.stats.eichel[key].stat ? 'draw' : ''">
+                        <div class="number" ng-class="stat.stat > c.stats.eichel[key].stat ? 'winner' : ''">
                             {{stat.stat}}
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-6 right">
-                    <div class="card animated bounceInLeft" ng-repeat="(key, stat) in c.stats.eichel">
+                    <div class="card animated bounceInRight" ng-repeat="(key, stat) in c.stats.eichel">
                         <div class="title">
                             {{stat.display}}
                         </div>
-                        <div class="number" ng-class="stat.stat > c.stats.mcdavid[key].stat ? 'draw' : ''">
+                        <div class="number" ng-class="stat.stat > c.stats.mcdavid[key].stat ? 'winner' : ''">
                             {{stat.stat}}
                         </div>
                     </div>
@@ -104,18 +112,6 @@
 
 
     <!-- build:js(.) scripts/plugins.js -->
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
 
 
@@ -124,7 +120,6 @@
     <script src="scripts/indexController.js"></script>
     <!-- endbuild -->
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
         (function (b, o, i, l, e, r) {
             b.GoogleAnalyticsObject = l;

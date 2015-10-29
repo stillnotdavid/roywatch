@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $(".loader").fadeOut("slow");
     $('.number').each(function () {
         $(this).prop('Counter', 0).animate({
             Counter: $(this).text()

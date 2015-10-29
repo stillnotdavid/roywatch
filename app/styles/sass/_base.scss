@@ -1,8 +1,11 @@
-$mobile: 761px;
 body {
     background: url('../images/background.jpg') no-repeat center center fixed;
     background-size: cover;
     background-color: $background;
+}
+
+.main {
+    padding-bottom: $spacing-lg;
 }
 
 .header {
@@ -14,8 +17,14 @@ body {
     display: none;
     position: fixed;
     top: 0;
-    @media (min-width: $mobile) {
+    z-index: -1;
+    @media (min-width: $screen-sm-min) {
         display: block;
+    }
+    img {
+        width: 60%;
+        opacity: 0.05;
+        animation: pulsing 10s infinite;
     }
 }
 
@@ -27,12 +36,12 @@ body {
     text-align: right;
     padding-right: $spacing-md;
     position: relative;
-    @media (min-width: $mobile) {
+    @media (min-width: $screen-sm-min) {
         padding-right: $spacing-xl;
     }
     .team {
         right: -15%;
-        @media (min-width: $mobile) {
+        @media (min-width: $screen-sm-min) {
             right: -15%;
         }
     }
@@ -42,16 +51,16 @@ body {
     text-align: left;
     padding-left: $spacing-md;
     position: relative;
-    @media (min-width: $mobile) {
+    @media (min-width: $screen-sm-min) {
         padding-left: $spacing-xl;
     }
     .team {
         left: -15%;
-        @media (min-width: $mobile) {
-            right: -15%;
+        @media (min-width: $screen-sm-min) {
+            left: -15%;
         }
     }
-} 
+}
 
 .divider {
     height: 1px;
@@ -66,7 +75,7 @@ body {
     border: solid 2px $white;
     height: 100px;
     width: 100px;
-    margin-bottom: $spacing-lg;
+    margin-bottom: $spacing-md;
     display: inline-block;
 }
 
@@ -74,11 +83,89 @@ body {
     margin-bottom: $spacing-sm;
 }
 
-.team-image {
-  max-width: 40%;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=05)";
-  filter: alpha(opacity=05);
-  -moz-opacity: 0.05;
-  -khtml-opacity: 0.05;
-  opacity: 0.05;
+// Loader
+.loader {
+    height: 100vh;
+    width: 100vw;
+    background: $background;
+    position: fixed;
+    z-index: 1000;
+}
+
+.spinner {
+    margin: 400px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    -webkit-animation: sk-rotate 2.0s infinite linear;
+    animation: sk-rotate 2.0s infinite linear;
+}
+
+.dot1,
+.dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: $yellow;
+    border-radius: 100%;
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.dot2 {
+    top: auto;
+    background-color: $green;
+    bottom: 0;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-rotate {
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes sk-rotate {
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes sk-bounce {
+    0%,
+    100% {
+        -webkit-transform: scale(0.0)
+    }
+    50% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes sk-bounce {
+    0%,
+    100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+@keyframes pulsing {
+    0%,
+    100% {
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+        -webkit-transform: translateX(20px);
+    }
 }
