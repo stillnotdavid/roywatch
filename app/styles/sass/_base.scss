@@ -83,6 +83,26 @@ body {
     margin-bottom: $spacing-sm;
 }
 
+.footer {
+    text-align: center;
+    color: $gray-light;
+    font-size: 1rem;
+    padding: $spacing-md 0;
+    a {
+        color: $white;
+    }
+    .divider {
+        display: block;
+        margin: $spacing-md auto;
+    }
+}
+
+.disclaimer {
+    color: $gray;
+    font-size: .85rem;
+    margin-top: 5px;
+}
+
 // Loader
 .loader {
     height: 100vh;
