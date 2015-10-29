@@ -26,7 +26,8 @@ section:after {
         display: block;
     }
     img {
-        width: 60%;
+        width: 38vw;
+        margin-top:5vh;
         opacity: 0.05;
         animation: pulsing 10s infinite;
     }
@@ -44,9 +45,9 @@ section:after {
         padding-right: $spacing-xl;
     }
     .team {
-        left: -40%;
+        left: -10vw;
         @media (min-width: $screen-sm-min) {
-            left: -40%;
+            left: -10vw;
         }
     }
 }
@@ -59,9 +60,9 @@ section:after {
         padding-left: $spacing-xl;
     }
     .team {
-        right: -40%;
+        right: -10vw;
         @media (min-width: $screen-sm-min) {
-            right: -40%;
+            right: -10vw;
         }
     }
 }
