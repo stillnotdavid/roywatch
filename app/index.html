@@ -83,7 +83,7 @@
                         <div class="title">
                             {{stat.display}}
                         </div>
-                        <div class="number" ng-class="stat.stat > c.stats.eichel[key].stat ? 'winner' : ''">
+                        <div class="number" ng-class="(stat.stat > c.stats.eichel[key].stat ? 'winner' : '') + ' ' + (stat.stat == c.stats.eichel[key].stat ? 'draw' : '')">
                             {{stat.stat}}
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                         <div class="title">
                             {{stat.display}}
                         </div>
-                        <div class="number" ng-class="stat.stat > c.stats.mcdavid[key].stat ? 'winner' : ''">
+                        <div class="number" ng-class="(stat.stat > c.stats.mcdavid[key].stat ? 'winner' : '') + ' ' + (stat.stat == c.stats.mcdavid[key].stat ? 'draw' : '')">
                             {{stat.stat}}
                         </div>
                     </div>

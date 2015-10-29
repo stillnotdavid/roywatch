@@ -1,7 +1,11 @@
 body {
-    background: url('../images/background.jpg') no-repeat center center fixed;
-    background-size: cover;
+/*  background: url('../images/background.jpg') no-repeat center center fixed;
+    background-size: cover; gone while i cant fix it */
     background-color: $background;
+}
+
+section:after {
+    clear:both;
 }
 
 .main {
@@ -40,9 +44,9 @@ body {
         padding-right: $spacing-xl;
     }
     .team {
-        right: -15%;
+        left: -40%;
         @media (min-width: $screen-sm-min) {
-            right: -15%;
+            left: -40%;
         }
     }
 }
@@ -55,9 +59,9 @@ body {
         padding-left: $spacing-xl;
     }
     .team {
-        left: -15%;
+        right: -40%;
         @media (min-width: $screen-sm-min) {
-            left: -15%;
+            right: -40%;
         }
     }
 }
